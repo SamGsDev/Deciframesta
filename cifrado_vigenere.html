@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cifrado de Vigenère</title>
+  <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Cifrado</h2>
+    <p>Ingresa tu mensaje y una clave para cifrar o descifrar texto.</p>
+
+    <div class="tabs">
+      <button class="tab active" onclick="setMode('enc')">Cifrar <span class="badge badge-enc">ENC</span></button>
+      <button class="tab" onclick="setMode('dec')">Descifrar <span class="badge badge-dec">DEC</span></button>
+    </div>
+
+    <div class="field">
+      <label id="msg-label">Texto a cifrar</label>
+      <textarea id="message" placeholder="Escribe tu mensaje aquí..." oninput="compute()"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Clave secreta</label>
+      <input type="text" id="key" placeholder="Ej: SECRETO" oninput="compute(); showKeyPreview()" />
+      <div class="key-preview" id="key-preview"></div>
+      <div class="error" id="key-error"></div>
+    </div>
+
+    <div class="result-box">
+      <div class="result-label" id="result-label">
+        Resultado
+        <button class="copy-btn" onclick="copyResult()">Copiar</button>
+      </div>
+      <div class="result-text" id="result-text">El resultado aparecerá aquí...</div>
+    </div>
+
+    <div class="info-strip" id="info-strip"></div>
+  </div>
+  <script src="../JavaScript/script.js"></script>
+</body>
+</html>
